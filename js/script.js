@@ -24,14 +24,29 @@ else{
 
 //esercizio parte 2
 
-let playerDice = Math.floor(Math.random()* 6 +1);
-let pcDice = Math.floor(Math.random()* 6 +1);
-if(playerDice > pcDice){
-    console.log("hai vinto")
-}
-else if(playerDice < pcDice){
-    console.log("hai perso")
-}
-else{
-    console.log("pareggio")
-}
+let btnDice = document.getElementById("btnDice")
+btnDice.addEventListener("click" , function(){
+    document.getElementById('playerDice').innerHTML = "";
+    document.getElementById('pcDice').innerHTML = "";
+    document.getElementById('howWin').innerHTML = "";
+
+    let playerDice = Math.floor(Math.random()* 6 +1);
+    let pcDice = Math.floor(Math.random()* 6 +1);
+
+    document.getElementById('playerDice').innerHTML += playerDice;
+    document.getElementById('pcDice').innerHTML += pcDice;
+
+    if(playerDice > pcDice){
+        document.getElementById('howWin').innerText += " hai vinto";
+        console.log("hai vinto")
+    }
+    else if(playerDice < pcDice){
+        document.getElementById('howWin').innerText += " hai perso";
+        console.log("hai perso")
+    }
+    else{
+        document.getElementById('howWin').innerText += " pareggio";
+        console.log("pareggio")
+    }
+})
+
